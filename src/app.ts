@@ -1,5 +1,5 @@
 import express, { Application } from "express";
-import testRoutes from "./routes/testapi";
+import videoApi from "./routes/videoApi";
 import { createGraphQLServer } from "./graphql/server";
 import { errorHandler } from "./middlewares/errorHandler";
 
@@ -9,7 +9,7 @@ const app: Application = express();
 app.use(express.json());
 
 // Routes for rest apis
-app.use("/", testRoutes);
+app.use("/", videoApi);
 
 // routes for graphql apis
 const graphqlServer = createGraphQLServer();
